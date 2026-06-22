@@ -1,0 +1,10 @@
+{
+  "vault_name": "TrustShield Quantum Integrity Vault",
+  "protected_file": "/home/debian/trustshield-iam-ai/module_evidence_vault/reports/audit_evidence.json",
+  "hash_algorithm": "SHA-256",
+  "evidence_hash": "7031802adeb6ec72222eb1325af83e7669b7639a000a2e1421a76e8b5f99c9cf",
+  "post_quantum_ready": true,
+  "future_signature_layer": "ML-DSA / Dilithium compatible design",
+  "purpose": "Tamper detection for IAM governance audit evidence",
+  "generated_at": "2026-06-09T15:43:09.991482Z"
+}

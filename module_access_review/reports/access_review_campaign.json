@@ -1,0 +1,98 @@
+{
+  "campaign_name": "Q2 2026 Privileged Access Review",
+  "generated_at": "2026-06-09T15:43:09.957320Z",
+  "total_reviews": 7,
+  "reviews": [
+    {
+      "review_id": "REV-0001",
+      "identity_id": "1011",
+      "name": "Service SQL",
+      "email": "svc_sql@corp.local",
+      "department": "IT",
+      "risk_score": 100,
+      "severity": "Critical",
+      "recommended_action": "Immediate remediation required. Disable or restrict access, validate ownership, enforce MFA, and create audit evidence.",
+      "review_status": "Pending",
+      "reviewer": null,
+      "created_at": "2026-06-09T15:43:09.957308Z"
+    },
+    {
+      "review_id": "REV-0002",
+      "identity_id": "1015",
+      "name": "Legacy Admin",
+      "email": "legacy@corp.local",
+      "department": "IT",
+      "risk_score": 100,
+      "severity": "Critical",
+      "recommended_action": "Immediate remediation required. Disable or restrict access, validate ownership, enforce MFA, and create audit evidence.",
+      "review_status": "Pending",
+      "reviewer": null,
+      "created_at": "2026-06-09T15:43:09.957314Z"
+    },
+    {
+      "review_id": "REV-0003",
+      "identity_id": "1003",
+      "name": "David Lee",
+      "email": "david@corp.local",
+      "department": "IT",
+      "risk_score": 75,
+      "severity": "High",
+      "recommended_action": "Remove access immediately and validate leaver control completion.",
+      "review_status": "Pending",
+      "reviewer": "bob@corp.local",
+      "created_at": "2026-06-09T15:43:09.957315Z"
+    },
+    {
+      "review_id": "REV-0004",
+      "identity_id": "1002",
+      "name": "Alice Brown",
+      "email": "alice@corp.local",
+      "department": "Finance",
+      "risk_score": 65,
+      "severity": "Medium",
+      "recommended_action": "Enable MFA and review privileged group membership.",
+      "review_status": "Pending",
+      "reviewer": "crsajan98@gmail.com",
+      "created_at": "2026-06-09T15:43:09.957316Z"
+    },
+    {
+      "review_id": "REV-0005",
+      "identity_id": "1014",
+      "name": "Contractor Two",
+      "email": "contractor2@corp.local",
+      "department": "Payments",
+      "risk_score": 55,
+      "severity": "Medium",
+      "recommended_action": "Review during the next access certification campaign.",
+      "review_status": "Pending",
+      "reviewer": "maria@corp.local",
+      "created_at": "2026-06-09T15:43:09.957317Z"
+    },
+    {
+      "review_id": "REV-0006",
+      "identity_id": "1012",
+      "name": "Service Backup",
+      "email": "svc_backup@corp.local",
+      "department": "IT",
+      "risk_score": 35,
+      "severity": "Low",
+      "recommended_action": "No urgent action required. Continue monitoring.",
+      "review_status": "Pending",
+      "reviewer": null,
+      "created_at": "2026-06-09T15:43:09.957318Z"
+    },
+    {
+      "review_id": "REV-0007",
+      "identity_id": "1006",
+      "name": "Sarah Wilson",
+      "email": "sarah@corp.local",
+      "department": "Security",
+      "risk_score": 25,
+      "severity": "Low",
+      "recommended_action": "No urgent action required. Continue monitoring.",
+      "review_status": "Pending",
+      "reviewer": null,
+      "created_at": "2026-06-09T15:43:09.957319Z"
+    }
+  ]
+}

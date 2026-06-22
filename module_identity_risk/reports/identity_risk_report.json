@@ -1,0 +1,551 @@
+{
+  "module": "Identity Risk Engine",
+  "generated_at": "2026-06-09T15:43:09.945896Z",
+  "source": "/home/debian/trustshield-iam-ai/module_identity_fabric/normalized/identity_fabric.json",
+  "quality_source": "/home/debian/trustshield-iam-ai/module_identity_quality/reports/identity_quality_report.json",
+  "summary": {
+    "total_identities": 17,
+    "risky_identities": 7,
+    "critical": 2,
+    "high": 1,
+    "medium": 2,
+    "low": 2
+  },
+  "identity_risks": [
+    {
+      "identity_id": "1011",
+      "name": "Service SQL",
+      "email": "svc_sql@corp.local",
+      "department": "IT",
+      "manager": null,
+      "status": "Active",
+      "groups": [
+        "Database Admins"
+      ],
+      "risk_score": 100,
+      "severity": "Critical",
+      "signal_count": 5,
+      "signals": [
+        {
+          "signal": "Privileged access without MFA",
+          "weight": 30,
+          "category": "Authentication Risk",
+          "explanation": "Identity has privileged access but MFA is not enabled.",
+          "evidence": {
+            "mfa_enabled": false,
+            "privileged_groups": [
+              "Database Admins"
+            ]
+          }
+        },
+        {
+          "signal": "Dormant privileged identity",
+          "weight": 35,
+          "category": "Dormant Access Risk",
+          "explanation": "Identity has not logged in for 365 days but still has privileged access.",
+          "evidence": {
+            "last_login_days": 365,
+            "privileged_groups": [
+              "Database Admins"
+            ]
+          }
+        },
+        {
+          "signal": "Privileged identity without accountable owner",
+          "weight": 25,
+          "category": "Ownership Risk",
+          "explanation": "Privileged identity has no manager or accountable business owner.",
+          "evidence": {
+            "manager": null,
+            "privileged_groups": [
+              "Database Admins"
+            ]
+          }
+        },
+        {
+          "signal": "Stale access still assigned",
+          "weight": 20,
+          "category": "Access Hygiene Risk",
+          "explanation": "Identity has not logged in for 365 days but still has assigned access.",
+          "evidence": {
+            "last_login_days": 365,
+            "groups": [
+              "Database Admins"
+            ]
+          }
+        },
+        {
+          "signal": "Low identity data confidence",
+          "weight": 15,
+          "category": "Data Quality Risk",
+          "explanation": "Identity has low data quality confidence, which can weaken access review and audit decisions.",
+          "evidence": {
+            "data_quality_score": 25,
+            "confidence": "Very Low",
+            "issue_count": 3
+          }
+        }
+      ],
+      "recommended_action": "Immediate remediation required. Disable or restrict access, validate ownership, enforce MFA, and create audit evidence."
+    },
+    {
+      "identity_id": "1015",
+      "name": "Legacy Admin",
+      "email": "legacy@corp.local",
+      "department": "IT",
+      "manager": null,
+      "status": "Active",
+      "groups": [
+        "Domain Admins",
+        "Database Admins"
+      ],
+      "risk_score": 100,
+      "severity": "Critical",
+      "signal_count": 6,
+      "signals": [
+        {
+          "signal": "Privileged access without MFA",
+          "weight": 30,
+          "category": "Authentication Risk",
+          "explanation": "Identity has privileged access but MFA is not enabled.",
+          "evidence": {
+            "mfa_enabled": false,
+            "privileged_groups": [
+              "Domain Admins",
+              "Database Admins"
+            ]
+          }
+        },
+        {
+          "signal": "Dormant privileged identity",
+          "weight": 35,
+          "category": "Dormant Access Risk",
+          "explanation": "Identity has not logged in for 400 days but still has privileged access.",
+          "evidence": {
+            "last_login_days": 400,
+            "privileged_groups": [
+              "Domain Admins",
+              "Database Admins"
+            ]
+          }
+        },
+        {
+          "signal": "Excessive critical privilege concentration",
+          "weight": 25,
+          "category": "Least Privilege Risk",
+          "explanation": "Identity belongs to multiple critical privileged groups.",
+          "evidence": {
+            "critical_groups": [
+              "Domain Admins",
+              "Database Admins"
+            ]
+          }
+        },
+        {
+          "signal": "Privileged identity without accountable owner",
+          "weight": 25,
+          "category": "Ownership Risk",
+          "explanation": "Privileged identity has no manager or accountable business owner.",
+          "evidence": {
+            "manager": null,
+            "privileged_groups": [
+              "Domain Admins",
+              "Database Admins"
+            ]
+          }
+        },
+        {
+          "signal": "Stale access still assigned",
+          "weight": 20,
+          "category": "Access Hygiene Risk",
+          "explanation": "Identity has not logged in for 400 days but still has assigned access.",
+          "evidence": {
+            "last_login_days": 400,
+            "groups": [
+              "Domain Admins",
+              "Database Admins"
+            ]
+          }
+        },
+        {
+          "signal": "Low identity data confidence",
+          "weight": 15,
+          "category": "Data Quality Risk",
+          "explanation": "Identity has low data quality confidence, which can weaken access review and audit decisions.",
+          "evidence": {
+            "data_quality_score": 25,
+            "confidence": "Very Low",
+            "issue_count": 3
+          }
+        }
+      ],
+      "recommended_action": "Immediate remediation required. Disable or restrict access, validate ownership, enforce MFA, and create audit evidence."
+    },
+    {
+      "identity_id": "1003",
+      "name": "David Lee",
+      "email": "david@corp.local",
+      "department": "IT",
+      "manager": "bob@corp.local",
+      "status": "Terminated",
+      "groups": [
+        "IT Users"
+      ],
+      "risk_score": 75,
+      "severity": "High",
+      "signal_count": 3,
+      "signals": [
+        {
+          "signal": "Terminated identity still has access",
+          "weight": 40,
+          "category": "Lifecycle Risk",
+          "explanation": "HR status shows terminated, but the identity still has group memberships.",
+          "evidence": {
+            "status": "terminated",
+            "groups": [
+              "IT Users"
+            ]
+          }
+        },
+        {
+          "signal": "Stale access still assigned",
+          "weight": 20,
+          "category": "Access Hygiene Risk",
+          "explanation": "Identity has not logged in for 240 days but still has assigned access.",
+          "evidence": {
+            "last_login_days": 240,
+            "groups": [
+              "IT Users"
+            ]
+          }
+        },
+        {
+          "signal": "Low identity data confidence",
+          "weight": 15,
+          "category": "Data Quality Risk",
+          "explanation": "Identity has low data quality confidence, which can weaken access review and audit decisions.",
+          "evidence": {
+            "data_quality_score": 40,
+            "confidence": "Low",
+            "issue_count": 2
+          }
+        }
+      ],
+      "recommended_action": "Remove access immediately and validate leaver control completion."
+    },
+    {
+      "identity_id": "1002",
+      "name": "Alice Brown",
+      "email": "alice@corp.local",
+      "department": "Finance",
+      "manager": "crsajan98@gmail.com",
+      "status": "Disabled",
+      "groups": [
+        "Finance Admins",
+        "Domain Admins"
+      ],
+      "risk_score": 65,
+      "severity": "Medium",
+      "signal_count": 2,
+      "signals": [
+        {
+          "signal": "Privileged access without MFA",
+          "weight": 30,
+          "category": "Authentication Risk",
+          "explanation": "Identity has privileged access but MFA is not enabled.",
+          "evidence": {
+            "mfa_enabled": false,
+            "privileged_groups": [
+              "Finance Admins",
+              "Domain Admins"
+            ]
+          }
+        },
+        {
+          "signal": "Dormant privileged identity",
+          "weight": 35,
+          "category": "Dormant Access Risk",
+          "explanation": "Identity has not logged in for 180 days but still has privileged access.",
+          "evidence": {
+            "last_login_days": 180,
+            "privileged_groups": [
+              "Finance Admins",
+              "Domain Admins"
+            ]
+          }
+        }
+      ],
+      "recommended_action": "Enable MFA and review privileged group membership."
+    },
+    {
+      "identity_id": "1014",
+      "name": "Contractor Two",
+      "email": "contractor2@corp.local",
+      "department": "Payments",
+      "manager": "maria@corp.local",
+      "status": "Active",
+      "groups": [
+        "Payment Operators"
+      ],
+      "risk_score": 55,
+      "severity": "Medium",
+      "signal_count": 2,
+      "signals": [
+        {
+          "signal": "Dormant privileged identity",
+          "weight": 35,
+          "category": "Dormant Access Risk",
+          "explanation": "Identity has not logged in for 200 days but still has privileged access.",
+          "evidence": {
+            "last_login_days": 200,
+            "privileged_groups": [
+              "Payment Operators"
+            ]
+          }
+        },
+        {
+          "signal": "Stale access still assigned",
+          "weight": 20,
+          "category": "Access Hygiene Risk",
+          "explanation": "Identity has not logged in for 200 days but still has assigned access.",
+          "evidence": {
+            "last_login_days": 200,
+            "groups": [
+              "Payment Operators"
+            ]
+          }
+        }
+      ],
+      "recommended_action": "Review during the next access certification campaign."
+    },
+    {
+      "identity_id": "1012",
+      "name": "Service Backup",
+      "email": "svc_backup@corp.local",
+      "department": "IT",
+      "manager": null,
+      "status": "Active",
+      "groups": [
+        "Backup Operators"
+      ],
+      "risk_score": 35,
+      "severity": "Low",
+      "signal_count": 2,
+      "signals": [
+        {
+          "signal": "Stale access still assigned",
+          "weight": 20,
+          "category": "Access Hygiene Risk",
+          "explanation": "Identity has not logged in for 300 days but still has assigned access.",
+          "evidence": {
+            "last_login_days": 300,
+            "groups": [
+              "Backup Operators"
+            ]
+          }
+        },
+        {
+          "signal": "Low identity data confidence",
+          "weight": 15,
+          "category": "Data Quality Risk",
+          "explanation": "Identity has low data quality confidence, which can weaken access review and audit decisions.",
+          "evidence": {
+            "data_quality_score": 50,
+            "confidence": "Low",
+            "issue_count": 2
+          }
+        }
+      ],
+      "recommended_action": "No urgent action required. Continue monitoring."
+    },
+    {
+      "identity_id": "1006",
+      "name": "Sarah Wilson",
+      "email": "sarah@corp.local",
+      "department": "Security",
+      "manager": null,
+      "status": "Active",
+      "groups": [
+        "Security Admins",
+        "Domain Admins"
+      ],
+      "risk_score": 25,
+      "severity": "Low",
+      "signal_count": 1,
+      "signals": [
+        {
+          "signal": "Privileged identity without accountable owner",
+          "weight": 25,
+          "category": "Ownership Risk",
+          "explanation": "Privileged identity has no manager or accountable business owner.",
+          "evidence": {
+            "manager": null,
+            "privileged_groups": [
+              "Security Admins",
+              "Domain Admins"
+            ]
+          }
+        }
+      ],
+      "recommended_action": "No urgent action required. Continue monitoring."
+    },
+    {
+      "identity_id": "1001",
+      "name": "John Smith",
+      "email": "john@corp.local",
+      "department": "Finance",
+      "manager": "alice@corp.local",
+      "status": "Active",
+      "groups": [
+        "Finance Users"
+      ],
+      "risk_score": 0,
+      "severity": "Low",
+      "signal_count": 0,
+      "signals": [],
+      "recommended_action": "No urgent action required. Continue monitoring."
+    },
+    {
+      "identity_id": "1004",
+      "name": "Maria Nowak",
+      "email": "maria@corp.local",
+      "department": "Payments",
+      "manager": "sarah@corp.local",
+      "status": "Active",
+      "groups": [
+        "Payment Operators"
+      ],
+      "risk_score": 0,
+      "severity": "Low",
+      "signal_count": 0,
+      "signals": [],
+      "recommended_action": "No urgent action required. Continue monitoring."
+    },
+    {
+      "identity_id": "1005",
+      "name": "Robert King",
+      "email": "robert@corp.local",
+      "department": "Security",
+      "manager": "sarah@corp.local",
+      "status": "Active",
+      "groups": [
+        "Security Analysts"
+      ],
+      "risk_score": 0,
+      "severity": "Low",
+      "signal_count": 0,
+      "signals": [],
+      "recommended_action": "No urgent action required. Continue monitoring."
+    },
+    {
+      "identity_id": "1007",
+      "name": "Emma White",
+      "email": "emma@corp.local",
+      "department": "HR",
+      "manager": "linda@corp.local",
+      "status": "Active",
+      "groups": [
+        "HR Users"
+      ],
+      "risk_score": 0,
+      "severity": "Low",
+      "signal_count": 0,
+      "signals": [],
+      "recommended_action": "No urgent action required. Continue monitoring."
+    },
+    {
+      "identity_id": "1008",
+      "name": "Linda Green",
+      "email": "linda@corp.local",
+      "department": "HR",
+      "manager": null,
+      "status": "Active",
+      "groups": [
+        "HR Managers"
+      ],
+      "risk_score": 0,
+      "severity": "Low",
+      "signal_count": 0,
+      "signals": [],
+      "recommended_action": "No urgent action required. Continue monitoring."
+    },
+    {
+      "identity_id": "1009",
+      "name": "Tom Baker",
+      "email": "tom@corp.local",
+      "department": "IT",
+      "manager": "bob@corp.local",
+      "status": "Active",
+      "groups": [
+        "Server Operators"
+      ],
+      "risk_score": 0,
+      "severity": "Low",
+      "signal_count": 0,
+      "signals": [],
+      "recommended_action": "No urgent action required. Continue monitoring."
+    },
+    {
+      "identity_id": "1010",
+      "name": "Bob Martin",
+      "email": "bob@corp.local",
+      "department": "IT",
+      "manager": null,
+      "status": "Active",
+      "groups": [
+        "IT Managers"
+      ],
+      "risk_score": 0,
+      "severity": "Low",
+      "signal_count": 0,
+      "signals": [],
+      "recommended_action": "No urgent action required. Continue monitoring."
+    },
+    {
+      "identity_id": "1013",
+      "name": "Contractor One",
+      "email": "contractor1@corp.local",
+      "department": "Finance",
+      "manager": "john@corp.local",
+      "status": "Active",
+      "groups": [
+        "Finance Users"
+      ],
+      "risk_score": 0,
+      "severity": "Low",
+      "signal_count": 0,
+      "signals": [],
+      "recommended_action": "No urgent action required. Continue monitoring."
+    },
+    {
+      "identity_id": "Employee ID: 2001",
+      "name": "Full Name: Oracle DBA",
+      "email": "Email: oracle_dba@corp.local",
+      "department": "Department: IT",
+      "manager": "Manager Email:",
+      "status": "Status: Active",
+      "groups": [
+        "Last login days: 5"
+      ],
+      "risk_score": 0,
+      "severity": "Low",
+      "signal_count": 0,
+      "signals": [],
+      "recommended_action": "No urgent action required. Continue monitoring."
+    },
+    {
+      "identity_id": "2001",
+      "name": "Oracle DBA",
+      "email": "oracle_dba@corp.local",
+      "department": "IT",
+      "manager": null,
+      "status": "Active",
+      "groups": [],
+      "risk_score": 0,
+      "severity": "Low",
+      "signal_count": 0,
+      "signals": [],
+      "recommended_action": "No urgent action required. Continue monitoring."
+    }
+  ]
+}

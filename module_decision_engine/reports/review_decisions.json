@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-06-09T15:43:09.967993Z",
+  "total_decisions": 7,
+  "decisions": [
+    {
+      "review_id": "REV-0001",
+      "identity": "svc_sql@corp.local",
+      "risk_score": 100,
+      "severity": "Critical",
+      "reviewer": null,
+      "decision": "REMOVE",
+      "decision_time": "2026-06-09T15:43:09.967985Z"
+    },
+    {
+      "review_id": "REV-0002",
+      "identity": "legacy@corp.local",
+      "risk_score": 100,
+      "severity": "Critical",
+      "reviewer": null,
+      "decision": "REMOVE",
+      "decision_time": "2026-06-09T15:43:09.967989Z"
+    },
+    {
+      "review_id": "REV-0003",
+      "identity": "david@corp.local",
+      "risk_score": 75,
+      "severity": "High",
+      "reviewer": "bob@corp.local",
+      "decision": "REMOVE",
+      "decision_time": "2026-06-09T15:43:09.967990Z"
+    },
+    {
+      "review_id": "REV-0004",
+      "identity": "alice@corp.local",
+      "risk_score": 65,
+      "severity": "Medium",
+      "reviewer": "crsajan98@gmail.com",
+      "decision": "ESCALATE",
+      "decision_time": "2026-06-09T15:43:09.967990Z"
+    },
+    {
+      "review_id": "REV-0005",
+      "identity": "contractor2@corp.local",
+      "risk_score": 55,
+      "severity": "Medium",
+      "reviewer": "maria@corp.local",
+      "decision": "ESCALATE",
+      "decision_time": "2026-06-09T15:43:09.967991Z"
+    },
+    {
+      "review_id": "REV-0006",
+      "identity": "svc_backup@corp.local",
+      "risk_score": 35,
+      "severity": "Low",
+      "reviewer": null,
+      "decision": "APPROVE",
+      "decision_time": "2026-06-09T15:43:09.967992Z"
+    },
+    {
+      "review_id": "REV-0007",
+      "identity": "sarah@corp.local",
+      "risk_score": 25,
+      "severity": "Low",
+      "reviewer": null,
+      "decision": "APPROVE",
+      "decision_time": "2026-06-09T15:43:09.967993Z"
+    }
+  ]
+}

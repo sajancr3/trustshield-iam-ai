@@ -1,0 +1,84 @@
+{
+  "vault_name": "TrustShield Evidence Vault",
+  "generated_at": "2026-06-09T15:43:09.978684Z",
+  "total_evidence": 7,
+  "evidence": [
+    {
+      "evidence_id": "EVD-REV-0001",
+      "review_id": "REV-0001",
+      "identity": "svc_sql@corp.local",
+      "reviewer": null,
+      "decision": "REMOVE",
+      "risk_score": 100,
+      "severity": "Critical",
+      "evidence_created": "2026-06-09T15:43:09.978674Z",
+      "audit_status": "Ready"
+    },
+    {
+      "evidence_id": "EVD-REV-0002",
+      "review_id": "REV-0002",
+      "identity": "legacy@corp.local",
+      "reviewer": null,
+      "decision": "REMOVE",
+      "risk_score": 100,
+      "severity": "Critical",
+      "evidence_created": "2026-06-09T15:43:09.978678Z",
+      "audit_status": "Ready"
+    },
+    {
+      "evidence_id": "EVD-REV-0003",
+      "review_id": "REV-0003",
+      "identity": "david@corp.local",
+      "reviewer": "bob@corp.local",
+      "decision": "REMOVE",
+      "risk_score": 75,
+      "severity": "High",
+      "evidence_created": "2026-06-09T15:43:09.978679Z",
+      "audit_status": "Ready"
+    },
+    {
+      "evidence_id": "EVD-REV-0004",
+      "review_id": "REV-0004",
+      "identity": "alice@corp.local",
+      "reviewer": "crsajan98@gmail.com",
+      "decision": "ESCALATE",
+      "risk_score": 65,
+      "severity": "Medium",
+      "evidence_created": "2026-06-09T15:43:09.978681Z",
+      "audit_status": "Ready"
+    },
+    {
+      "evidence_id": "EVD-REV-0005",
+      "review_id": "REV-0005",
+      "identity": "contractor2@corp.local",
+      "reviewer": "maria@corp.local",
+      "decision": "ESCALATE",
+      "risk_score": 55,
+      "severity": "Medium",
+      "evidence_created": "2026-06-09T15:43:09.978682Z",
+      "audit_status": "Ready"
+    },
+    {
+      "evidence_id": "EVD-REV-0006",
+      "review_id": "REV-0006",
+      "identity": "svc_backup@corp.local",
+      "reviewer": null,
+      "decision": "APPROVE",
+      "risk_score": 35,
+      "severity": "Low",
+      "evidence_created": "2026-06-09T15:43:09.978682Z",
+      "audit_status": "Ready"
+    },
+    {
+      "evidence_id": "EVD-REV-0007",
+      "review_id": "REV-0007",
+      "identity": "sarah@corp.local",
+      "reviewer": null,
+      "decision": "APPROVE",
+      "risk_score": 25,
+      "severity": "Low",
+      "evidence_created": "2026-06-09T15:43:09.978683Z",
+      "audit_status": "Ready"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.env
+trustshield.db
+outputs/
+*.log
+.integrity_key
+.signing_key.pem
+.DS_Store

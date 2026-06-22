@@ -1,0 +1,19 @@
+employee_id,full_name,email,department,manager,status
+1001,John Smith,john@corp.local,Finance,alice@corp.local,Active
+1002,Alice Brown,alice@corp.local,Finance,crsajan98@gmail.com,Disabled
+1003,David Lee,david@corp.local,IT,bob@corp.local,Terminated
+1004,Maria Nowak,maria@corp.local,Payments,sarah@corp.local,Active
+1005,Robert King,robert@corp.local,Security,sarah@corp.local,Active
+1006,Sarah Wilson,sarah@corp.local,Security,,Active
+1007,Emma White,emma@corp.local,HR,linda@corp.local,Active
+1008,Linda Green,linda@corp.local,HR,,Active
+1009,Tom Baker,tom@corp.local,IT,bob@corp.local,Active
+1010,Bob Martin,bob@corp.local,IT,,Active
+1011,Service SQL,svc_sql@corp.local,IT,,Active
+1012,Service Backup,svc_backup@corp.local,IT,,Active
+1013,Contractor One,contractor1@corp.local,Finance,john@corp.local,Active
+1014,Contractor Two,contractor2@corp.local,Payments,maria@corp.local,Active
+1015,Legacy Admin,legacy@corp.local,IT,,Active
+
+Employee ID: 2001,Full Name: Oracle DBA,Email: oracle_dba@corp.local,Department: IT,Manager Email:,Status: Active
+2001,Oracle DBA,oracle_dba@corp.local,IT,,Active

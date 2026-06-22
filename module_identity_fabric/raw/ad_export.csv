@@ -1,0 +1,19 @@
+samaccountname,email,mfa_enabled,last_login_days
+john.smith,john@corp.local,true,12
+alice.brown,alice@corp.local,false,180
+david.lee,david@corp.local,false,240
+maria.nowak,maria@corp.local,true,5
+robert.king,robert@corp.local,true,10
+sarah.wilson,sarah@corp.local,true,15
+emma.white,emma@corp.local,true,30
+linda.green,linda@corp.local,true,20
+tom.baker,tom@corp.local,false,120
+bob.martin,bob@corp.local,true,45
+svc_sql,svc_sql@corp.local,false,365
+svc_backup,svc_backup@corp.local,false,300
+contractor1,contractor1@corp.local,false,90
+contractor2,contractor2@corp.local,true,200
+legacy.admin,legacy@corp.local,false,400
+
+,Email: oracle_dba@corp.local,ad username: oracle.dba,MFA enabled: false
+,oracle_dba@corp.local,false,999

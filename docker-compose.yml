@@ -1,0 +1,43 @@
+version: '3.8'
+services:
+  trustshield:
+    build: .
+    container_name: trustshield_dashboard
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data
+      - ./module_identity_fabric/raw:/app/module_identity_fabric/raw
+      - ./outputs:/app/outputs
+    environment:
+      - OLLAMA_HOST=http://ollama:11434
+    depends_on:
+      - ollama
+    restart: unless-stopped
+
+  trustshield-cli:
+    build: .
+    container_name: trustshield_cli
+    volumes:
+      - ./data:/app/data
+      - ./module_identity_fabric/raw:/app/module_identity_fabric/raw
+      - ./outputs:/app/outputs
+    environment:
+      - OLLAMA_HOST=http://ollama:11434
+    stdin_open: true
+    tty: true
+    command: python3 start.py
+    profiles:
+      - cli
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: trustshield_ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_models:/root/.ollama
+    restart: unless-stopped
+
+volumes:
+  ollama_models:

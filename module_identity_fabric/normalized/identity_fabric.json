@@ -1,0 +1,226 @@
+{
+  "identities": [
+    {
+      "identity_id": "1001",
+      "name": "John Smith",
+      "email": "john@corp.local",
+      "department": "Finance",
+      "manager": "alice@corp.local",
+      "status": "Active",
+      "mfa_enabled": "true",
+      "last_login_days": "12",
+      "groups": [
+        "Finance Users"
+      ]
+    },
+    {
+      "identity_id": "1002",
+      "name": "Alice Brown",
+      "email": "alice@corp.local",
+      "department": "Finance",
+      "manager": "crsajan98@gmail.com",
+      "status": "Disabled",
+      "mfa_enabled": "false",
+      "last_login_days": "180",
+      "groups": [
+        "Finance Admins",
+        "Domain Admins"
+      ]
+    },
+    {
+      "identity_id": "1003",
+      "name": "David Lee",
+      "email": "david@corp.local",
+      "department": "IT",
+      "manager": "bob@corp.local",
+      "status": "Terminated",
+      "mfa_enabled": "false",
+      "last_login_days": "240",
+      "groups": [
+        "IT Users"
+      ]
+    },
+    {
+      "identity_id": "1004",
+      "name": "Maria Nowak",
+      "email": "maria@corp.local",
+      "department": "Payments",
+      "manager": "sarah@corp.local",
+      "status": "Active",
+      "mfa_enabled": "true",
+      "last_login_days": "5",
+      "groups": [
+        "Payment Operators"
+      ]
+    },
+    {
+      "identity_id": "1005",
+      "name": "Robert King",
+      "email": "robert@corp.local",
+      "department": "Security",
+      "manager": "sarah@corp.local",
+      "status": "Active",
+      "mfa_enabled": "true",
+      "last_login_days": "10",
+      "groups": [
+        "Security Analysts"
+      ]
+    },
+    {
+      "identity_id": "1006",
+      "name": "Sarah Wilson",
+      "email": "sarah@corp.local",
+      "department": "Security",
+      "manager": null,
+      "status": "Active",
+      "mfa_enabled": "true",
+      "last_login_days": "15",
+      "groups": [
+        "Security Admins",
+        "Domain Admins"
+      ]
+    },
+    {
+      "identity_id": "1007",
+      "name": "Emma White",
+      "email": "emma@corp.local",
+      "department": "HR",
+      "manager": "linda@corp.local",
+      "status": "Active",
+      "mfa_enabled": "true",
+      "last_login_days": "30",
+      "groups": [
+        "HR Users"
+      ]
+    },
+    {
+      "identity_id": "1008",
+      "name": "Linda Green",
+      "email": "linda@corp.local",
+      "department": "HR",
+      "manager": null,
+      "status": "Active",
+      "mfa_enabled": "true",
+      "last_login_days": "20",
+      "groups": [
+        "HR Managers"
+      ]
+    },
+    {
+      "identity_id": "1009",
+      "name": "Tom Baker",
+      "email": "tom@corp.local",
+      "department": "IT",
+      "manager": "bob@corp.local",
+      "status": "Active",
+      "mfa_enabled": "false",
+      "last_login_days": "120",
+      "groups": [
+        "Server Operators"
+      ]
+    },
+    {
+      "identity_id": "1010",
+      "name": "Bob Martin",
+      "email": "bob@corp.local",
+      "department": "IT",
+      "manager": null,
+      "status": "Active",
+      "mfa_enabled": "true",
+      "last_login_days": "45",
+      "groups": [
+        "IT Managers"
+      ]
+    },
+    {
+      "identity_id": "1011",
+      "name": "Service SQL",
+      "email": "svc_sql@corp.local",
+      "department": "IT",
+      "manager": null,
+      "status": "Active",
+      "mfa_enabled": "false",
+      "last_login_days": "365",
+      "groups": [
+        "Database Admins"
+      ]
+    },
+    {
+      "identity_id": "1012",
+      "name": "Service Backup",
+      "email": "svc_backup@corp.local",
+      "department": "IT",
+      "manager": null,
+      "status": "Active",
+      "mfa_enabled": "false",
+      "last_login_days": "300",
+      "groups": [
+        "Backup Operators"
+      ]
+    },
+    {
+      "identity_id": "1013",
+      "name": "Contractor One",
+      "email": "contractor1@corp.local",
+      "department": "Finance",
+      "manager": "john@corp.local",
+      "status": "Active",
+      "mfa_enabled": "false",
+      "last_login_days": "90",
+      "groups": [
+        "Finance Users"
+      ]
+    },
+    {
+      "identity_id": "1014",
+      "name": "Contractor Two",
+      "email": "contractor2@corp.local",
+      "department": "Payments",
+      "manager": "maria@corp.local",
+      "status": "Active",
+      "mfa_enabled": "true",
+      "last_login_days": "200",
+      "groups": [
+        "Payment Operators"
+      ]
+    },
+    {
+      "identity_id": "1015",
+      "name": "Legacy Admin",
+      "email": "legacy@corp.local",
+      "department": "IT",
+      "manager": null,
+      "status": "Active",
+      "mfa_enabled": "false",
+      "last_login_days": "400",
+      "groups": [
+        "Domain Admins",
+        "Database Admins"
+      ]
+    },
+    {
+      "identity_id": "Employee ID: 2001",
+      "name": "Full Name: Oracle DBA",
+      "email": "Email: oracle_dba@corp.local",
+      "department": "Department: IT",
+      "manager": "Manager Email:",
+      "status": "Status: Active",
+      "mfa_enabled": "ad username: oracle.dba",
+      "last_login_days": "MFA enabled: false",
+      "groups": [
+        "Last login days: 5"
+      ]
+    },
+    {
+      "identity_id": "2001",
+      "name": "Oracle DBA",
+      "email": "oracle_dba@corp.local",
+      "department": "IT",
+      "manager": null,
+      "status": "Active",
+      "mfa_enabled": "false",
+      "last_login_days": "999",
+      "groups": []
+    }
+  ]
+}

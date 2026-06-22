@@ -1,0 +1,331 @@
+{
+  "module": "Identity Data Quality & Confidence Engine",
+  "generated_at": "2026-06-09T15:43:09.932667Z",
+  "source": "/home/debian/trustshield-iam-ai/module_identity_fabric/normalized/identity_fabric.json",
+  "summary": {
+    "total_identities": 17,
+    "identities_with_issues": 11,
+    "critical_issues": 1,
+    "high_issues": 15,
+    "average_quality_score": 75.0
+  },
+  "identity_quality": [
+    {
+      "identity_id": "1001",
+      "email": "john@corp.local",
+      "name": "John Smith",
+      "data_quality_score": 100,
+      "confidence": "High",
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "identity_id": "1002",
+      "email": "alice@corp.local",
+      "name": "Alice Brown",
+      "data_quality_score": 75,
+      "confidence": "Medium",
+      "issue_count": 1,
+      "issues": [
+        {
+          "severity": "High",
+          "issue_type": "privileged_user_without_mfa",
+          "field": "mfa_enabled",
+          "description": "Identity has privileged group membership but MFA is not enabled.",
+          "impact": "Stolen credentials could provide elevated access without an additional verification factor.",
+          "recommendation": "Enable MFA and enforce privileged access policy.",
+          "score_penalty": 25
+        }
+      ]
+    },
+    {
+      "identity_id": "1003",
+      "email": "david@corp.local",
+      "name": "David Lee",
+      "data_quality_score": 40,
+      "confidence": "Low",
+      "issue_count": 2,
+      "issues": [
+        {
+          "severity": "Critical",
+          "issue_type": "terminated_user_with_access",
+          "field": "status/groups",
+          "description": "Terminated identity still has group memberships.",
+          "impact": "Leaver process may be incomplete, creating risk of unauthorized access.",
+          "recommendation": "Remove all access and validate offboarding controls.",
+          "score_penalty": 35
+        },
+        {
+          "severity": "High",
+          "issue_type": "stale_identity_with_access",
+          "field": "last_login_days",
+          "description": "Identity has not logged in for 240 days but still has access.",
+          "impact": "Dormant access increases the risk of unnoticed compromise or unnecessary entitlement exposure.",
+          "recommendation": "Validate business need and remove access if no longer required.",
+          "score_penalty": 25
+        }
+      ]
+    },
+    {
+      "identity_id": "1004",
+      "email": "maria@corp.local",
+      "name": "Maria Nowak",
+      "data_quality_score": 100,
+      "confidence": "High",
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "identity_id": "1005",
+      "email": "robert@corp.local",
+      "name": "Robert King",
+      "data_quality_score": 100,
+      "confidence": "High",
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "identity_id": "1006",
+      "email": "sarah@corp.local",
+      "name": "Sarah Wilson",
+      "data_quality_score": 75,
+      "confidence": "Medium",
+      "issue_count": 1,
+      "issues": [
+        {
+          "severity": "High",
+          "issue_type": "missing_manager",
+          "field": "manager",
+          "description": "Identity record has no manager or accountable owner.",
+          "impact": "Access reviews and approvals may not have a valid business owner.",
+          "recommendation": "Assign a manager or application owner for governance accountability.",
+          "score_penalty": 25
+        }
+      ]
+    },
+    {
+      "identity_id": "1007",
+      "email": "emma@corp.local",
+      "name": "Emma White",
+      "data_quality_score": 100,
+      "confidence": "High",
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "identity_id": "1008",
+      "email": "linda@corp.local",
+      "name": "Linda Green",
+      "data_quality_score": 75,
+      "confidence": "Medium",
+      "issue_count": 1,
+      "issues": [
+        {
+          "severity": "High",
+          "issue_type": "missing_manager",
+          "field": "manager",
+          "description": "Identity record has no manager or accountable owner.",
+          "impact": "Access reviews and approvals may not have a valid business owner.",
+          "recommendation": "Assign a manager or application owner for governance accountability.",
+          "score_penalty": 25
+        }
+      ]
+    },
+    {
+      "identity_id": "1009",
+      "email": "tom@corp.local",
+      "name": "Tom Baker",
+      "data_quality_score": 100,
+      "confidence": "High",
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "identity_id": "1010",
+      "email": "bob@corp.local",
+      "name": "Bob Martin",
+      "data_quality_score": 75,
+      "confidence": "Medium",
+      "issue_count": 1,
+      "issues": [
+        {
+          "severity": "High",
+          "issue_type": "missing_manager",
+          "field": "manager",
+          "description": "Identity record has no manager or accountable owner.",
+          "impact": "Access reviews and approvals may not have a valid business owner.",
+          "recommendation": "Assign a manager or application owner for governance accountability.",
+          "score_penalty": 25
+        }
+      ]
+    },
+    {
+      "identity_id": "1011",
+      "email": "svc_sql@corp.local",
+      "name": "Service SQL",
+      "data_quality_score": 25,
+      "confidence": "Very Low",
+      "issue_count": 3,
+      "issues": [
+        {
+          "severity": "High",
+          "issue_type": "missing_manager",
+          "field": "manager",
+          "description": "Identity record has no manager or accountable owner.",
+          "impact": "Access reviews and approvals may not have a valid business owner.",
+          "recommendation": "Assign a manager or application owner for governance accountability.",
+          "score_penalty": 25
+        },
+        {
+          "severity": "High",
+          "issue_type": "privileged_user_without_mfa",
+          "field": "mfa_enabled",
+          "description": "Identity has privileged group membership but MFA is not enabled.",
+          "impact": "Stolen credentials could provide elevated access without an additional verification factor.",
+          "recommendation": "Enable MFA and enforce privileged access policy.",
+          "score_penalty": 25
+        },
+        {
+          "severity": "High",
+          "issue_type": "stale_identity_with_access",
+          "field": "last_login_days",
+          "description": "Identity has not logged in for 365 days but still has access.",
+          "impact": "Dormant access increases the risk of unnoticed compromise or unnecessary entitlement exposure.",
+          "recommendation": "Validate business need and remove access if no longer required.",
+          "score_penalty": 25
+        }
+      ]
+    },
+    {
+      "identity_id": "1012",
+      "email": "svc_backup@corp.local",
+      "name": "Service Backup",
+      "data_quality_score": 50,
+      "confidence": "Low",
+      "issue_count": 2,
+      "issues": [
+        {
+          "severity": "High",
+          "issue_type": "missing_manager",
+          "field": "manager",
+          "description": "Identity record has no manager or accountable owner.",
+          "impact": "Access reviews and approvals may not have a valid business owner.",
+          "recommendation": "Assign a manager or application owner for governance accountability.",
+          "score_penalty": 25
+        },
+        {
+          "severity": "High",
+          "issue_type": "stale_identity_with_access",
+          "field": "last_login_days",
+          "description": "Identity has not logged in for 300 days but still has access.",
+          "impact": "Dormant access increases the risk of unnoticed compromise or unnecessary entitlement exposure.",
+          "recommendation": "Validate business need and remove access if no longer required.",
+          "score_penalty": 25
+        }
+      ]
+    },
+    {
+      "identity_id": "1013",
+      "email": "contractor1@corp.local",
+      "name": "Contractor One",
+      "data_quality_score": 100,
+      "confidence": "High",
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "identity_id": "1014",
+      "email": "contractor2@corp.local",
+      "name": "Contractor Two",
+      "data_quality_score": 75,
+      "confidence": "Medium",
+      "issue_count": 1,
+      "issues": [
+        {
+          "severity": "High",
+          "issue_type": "stale_identity_with_access",
+          "field": "last_login_days",
+          "description": "Identity has not logged in for 200 days but still has access.",
+          "impact": "Dormant access increases the risk of unnoticed compromise or unnecessary entitlement exposure.",
+          "recommendation": "Validate business need and remove access if no longer required.",
+          "score_penalty": 25
+        }
+      ]
+    },
+    {
+      "identity_id": "1015",
+      "email": "legacy@corp.local",
+      "name": "Legacy Admin",
+      "data_quality_score": 25,
+      "confidence": "Very Low",
+      "issue_count": 3,
+      "issues": [
+        {
+          "severity": "High",
+          "issue_type": "missing_manager",
+          "field": "manager",
+          "description": "Identity record has no manager or accountable owner.",
+          "impact": "Access reviews and approvals may not have a valid business owner.",
+          "recommendation": "Assign a manager or application owner for governance accountability.",
+          "score_penalty": 25
+        },
+        {
+          "severity": "High",
+          "issue_type": "privileged_user_without_mfa",
+          "field": "mfa_enabled",
+          "description": "Identity has privileged group membership but MFA is not enabled.",
+          "impact": "Stolen credentials could provide elevated access without an additional verification factor.",
+          "recommendation": "Enable MFA and enforce privileged access policy.",
+          "score_penalty": 25
+        },
+        {
+          "severity": "High",
+          "issue_type": "stale_identity_with_access",
+          "field": "last_login_days",
+          "description": "Identity has not logged in for 400 days but still has access.",
+          "impact": "Dormant access increases the risk of unnoticed compromise or unnecessary entitlement exposure.",
+          "recommendation": "Validate business need and remove access if no longer required.",
+          "score_penalty": 25
+        }
+      ]
+    },
+    {
+      "identity_id": "Employee ID: 2001",
+      "email": "Email: oracle_dba@corp.local",
+      "name": "Full Name: Oracle DBA",
+      "data_quality_score": 85,
+      "confidence": "Medium",
+      "issue_count": 1,
+      "issues": [
+        {
+          "severity": "Medium",
+          "issue_type": "invalid_last_login_value",
+          "field": "last_login_days",
+          "description": "Last login value is missing or not numeric.",
+          "impact": "Staleness checks cannot be trusted for this identity.",
+          "recommendation": "Fix source data format for last login information.",
+          "score_penalty": 15
+        }
+      ]
+    },
+    {
+      "identity_id": "2001",
+      "email": "oracle_dba@corp.local",
+      "name": "Oracle DBA",
+      "data_quality_score": 75,
+      "confidence": "Medium",
+      "issue_count": 1,
+      "issues": [
+        {
+          "severity": "High",
+          "issue_type": "missing_manager",
+          "field": "manager",
+          "description": "Identity record has no manager or accountable owner.",
+          "impact": "Access reviews and approvals may not have a valid business owner.",
+          "recommendation": "Assign a manager or application owner for governance accountability.",
+          "score_penalty": 25
+        }
+      ]
+    }
+  ]
+}

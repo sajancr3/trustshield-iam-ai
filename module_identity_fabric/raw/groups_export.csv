@@ -1,0 +1,21 @@
+email,group_name
+john@corp.local,Finance Users
+alice@corp.local,Finance Admins
+alice@corp.local,Domain Admins
+david@corp.local,IT Users
+maria@corp.local,Payment Operators
+robert@corp.local,Security Analysts
+sarah@corp.local,Security Admins
+sarah@corp.local,Domain Admins
+emma@corp.local,HR Users
+linda@corp.local,HR Managers
+tom@corp.local,Server Operators
+bob@corp.local,IT Managers
+svc_sql@corp.local,Database Admins
+svc_backup@corp.local,Backup Operators
+contractor1@corp.local,Finance Users
+contractor2@corp.local,Payment Operators
+legacy@corp.local,Domain Admins
+legacy@corp.local,Database Admins
+
+Email: oracle_dba@corp.local,Last login days: 5
