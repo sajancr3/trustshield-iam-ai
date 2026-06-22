@@ -1,6 +1,7 @@
 import sqlite3
 import subprocess
 from pathlib import Path
+from module_entra_connector.entra_connector import sync_from_entra
 
 BASE_DIR = Path(__file__).resolve().parent
 DB_FILE = BASE_DIR / "trustshield.db"
@@ -102,12 +103,26 @@ def view_raw_file(filename):
     print(path.read_text())
 
 
+
+# ==================================================
+# ENTRA ID LIVE SYNC
+# ==================================================
+def sync_entra_and_run():
+    print("\n[Entra ID] Pulling live identity data from Microsoft Entra ID...")
+    success = sync_from_entra()
+    if success:
+        print("\n[OK] Live data synced. Running full governance pipeline...")
+        run_full_pipeline()
+    else:
+        print("\n[FAILED] Sync failed. Check .env credentials.")
+
 def analyze_new_data_menu():
     while True:
         print("""
 ======================================
  Analyze New Data
 ======================================
+0. Sync from Microsoft Entra ID  [LIVE DATA]
 1. Add Identity Manually
 2. View Raw HR Data
 3. View Raw AD Data
@@ -119,7 +134,9 @@ def analyze_new_data_menu():
 
         choice = input("Select option: ").strip()
 
-        if choice == "1":
+        if choice == "0":
+            sync_entra_and_run()
+        elif choice == "1":
             add_identity_manually()
 
         elif choice == "2":
