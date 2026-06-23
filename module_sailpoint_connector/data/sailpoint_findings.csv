@@ -1,0 +1,15 @@
+finding_type,email,name,department,detail,severity
+STALE_ENTITLEMENT,andrew.scott@globalbankcorp.com,Andrew Scott,IT,Active account with no login for 120 days. Entitlements should be reviewed and recertified.,High
+STALE_ENTITLEMENT,rachel.green@globalbankcorp.com,Rachel Green,Finance,Active account with no login for 145 days. Entitlements should be reviewed and recertified.,High
+STALE_ENTITLEMENT,peter.morrison@globalbankcorp.com,Peter Morrison,Sales,Active account with no login for 200 days. Entitlements should be reviewed and recertified.,Critical
+STALE_ENTITLEMENT,fiona.campbell@globalbankcorp.com,Fiona Campbell,Engineering,Active account with no login for 95 days. Entitlements should be reviewed and recertified.,High
+TERMINATED_WITH_ACCESS,steven.clark@globalbankcorp.com,Steven Clark,Finance,Identity marked Terminated but account remains active in SailPoint with 3 access profiles. Last login: 180 days ago.,Critical
+TERMINATED_WITH_ACCESS,maria.lopez@globalbankcorp.com,Maria Lopez,IT,Identity marked Terminated but account remains active in SailPoint with 4 access profiles. Last login: 210 days ago.,Critical
+TERMINATED_WITH_ACCESS,john.williams@globalbankcorp.com,John Williams,Engineering,Identity marked Terminated but account remains active in SailPoint with 4 access profiles. Last login: 155 days ago.,Critical
+MISSING_MANAGER,oliver.reed@globalbankcorp.com,Oliver Reed,Sales,No manager assigned. Access reviews cannot be delegated. Account will be excluded from certification campaigns.,Medium
+MISSING_MANAGER,grace.kelly@globalbankcorp.com,Grace Kelly,Finance,No manager assigned. Access reviews cannot be delegated. Account will be excluded from certification campaigns.,Medium
+SOD_VIOLATION,nathan.fox@globalbankcorp.com,Nathan Fox,Finance,Identity has both Finance-Systems and Audit-Portal access. Finance + Audit combination violates Separation of Duties policy.,Critical
+SOD_VIOLATION,isabella.stone@globalbankcorp.com,Isabella Stone,Finance,Identity has both Finance-Systems and Audit-Portal access. Finance + Audit combination violates Separation of Duties policy.,Critical
+ORPHAN_ACCOUNT,svc.backup01@globalbankcorp.com,svc_backup01,IT,Account exists in SailPoint with no matching HR record. Likely a service account with no owner.,High
+ORPHAN_ACCOUNT,svc.reporting@globalbankcorp.com,svc_reporting,IT,Account exists in SailPoint with no matching HR record. Likely a service account with no owner.,High
+ORPHAN_ACCOUNT,app.finance.svc@globalbankcorp.com,app_finance_svc,Finance,Account exists in SailPoint with no matching HR record. Likely a service account with no owner.,High

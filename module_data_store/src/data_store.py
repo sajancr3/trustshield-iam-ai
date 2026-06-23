@@ -29,7 +29,7 @@ cur = conn.cursor()
 
 cur.execute("""
 CREATE TABLE IF NOT EXISTS identities (
-    identity_id INTEGER PRIMARY KEY,
+    identity_id TEXT PRIMARY KEY,
     name TEXT,
     email TEXT,
     department TEXT,

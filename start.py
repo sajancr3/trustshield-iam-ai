@@ -2,6 +2,7 @@ import sqlite3
 import subprocess
 from pathlib import Path
 from module_entra_connector.entra_connector import sync_from_entra
+from module_sailpoint_connector.sailpoint_connector import sync_from_sailpoint
 
 BASE_DIR = Path(__file__).resolve().parent
 DB_FILE = BASE_DIR / "trustshield.db"
@@ -107,6 +108,16 @@ def view_raw_file(filename):
 # ==================================================
 # ENTRA ID LIVE SYNC
 # ==================================================
+
+def sync_sailpoint_and_run():
+    print("\n[SailPoint] Loading identity data from SailPoint ISC...")
+    success = sync_from_sailpoint()
+    if success:
+        print("\n[OK] SailPoint data loaded. Running full governance pipeline...")
+        run_full_pipeline()
+    else:
+        print("\n[FAILED] Sync failed. Check .env credentials or SAILPOINT_MOCK setting.")
+
 def sync_entra_and_run():
     print("\n[Entra ID] Pulling live identity data from Microsoft Entra ID...")
     success = sync_from_entra()
@@ -123,6 +134,7 @@ def analyze_new_data_menu():
  Analyze New Data
 ======================================
 0. Sync from Microsoft Entra ID  [LIVE DATA]
+S. Sync from SailPoint ISC       [ENTERPRISE DATA]
 1. Add Identity Manually
 2. View Raw HR Data
 3. View Raw AD Data
@@ -136,6 +148,8 @@ def analyze_new_data_menu():
 
         if choice == "0":
             sync_entra_and_run()
+        elif choice == "s":
+            sync_sailpoint_and_run()
         elif choice == "1":
             add_identity_manually()
 
